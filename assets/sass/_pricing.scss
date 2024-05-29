@@ -1,0 +1,124 @@
+.pricing {
+  padding: 30px 0;
+}
+.pricing_title {
+  @include grid(1fr, 10px);
+  text-align: center;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-black;
+  }
+  h1 {
+    font-size: 32px;
+    color: $color-black;
+    font-weight: 500;
+  }
+  p {
+    font-size: 16px;
+    color: $color-gray;
+  }
+}
+
+.pricing_items {
+  @include grid(1fr 1fr 1fr, 20px);
+  padding-top: 30px;
+}
+.pricing_item {
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  padding: 40px 0;
+  @include grid(1fr, 10px);
+  text-align: center;
+
+  h2 {
+    font-size: 18px;
+  }
+  h1 {
+    font-size: 80px;
+    padding-bottom: 5px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 16px;
+    color: $color-black;
+  }
+  button {
+    width: 120px;
+    height: 40px;
+    font-size: 17px;
+    color: $color-white;
+    border-radius: 5px;
+    border: none;
+    margin: 0 auto;
+  }
+}
+.pricing_item1 {
+  h2,
+  h1 {
+    color: $color-blue;
+  }
+  button {
+    background-color: $color-blue;
+  }
+  button:hover {
+    background-color: $color-black;
+  }
+}
+.pricing_item2 {
+  h2,
+  h1 {
+    color: $color-red;
+  }
+  button {
+    background-color: $color-red;
+  }
+  button:hover {
+    background-color: $color-black;
+  }
+}
+.pricing_item3 {
+  h2,
+  h1 {
+    color: $color-yellow;
+  }
+  button {
+    background-color: $color-yellow;
+  }
+  button:hover {
+    background-color: $color-black;
+  }
+}
+
+@media (max-width: 1000px){
+    .pricing_items{
+        @include grid(1fr 1fr, 30px);
+    }
+}
+
+@media (max-width: 700px) {
+  .pricing_title {
+    br {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 600px){
+    .pricing_items{
+        @include grid(1fr, 30px);
+    }
+}
+@media (max-width: 450px) {
+  .pricing_title {
+    @include grid(1fr, 5px);
+
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.notification {
+  background-color: #f2f2f2;
+  padding: 50px 0;
+}
+.notification_items {
+  @include grid(1fr 1fr 1fr, 20px);
+  padding-top: 30px;
+}
+.notification_item {
+  background-color: $color-white;
+  border-radius: 20px;
+  padding: 30px;
+
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-black;
+  }
+
+  &_end {
+    @include flex(center, flex-start, 5px);
+    padding-top: 10px;
+
+    img {
+      width: 50px;
+    }
+    &_ {
+      @include grid(1fr, 3px);
+
+      p {
+        font-size: 15px;
+        color: $color-black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .notification_items {
+    @include grid(1fr 1fr, 20px);
+  }
+  .notification_item {
+    padding: 22px;
+  }
+}
+@media (max-width: 600px) {
+  .notification_items {
+    @include grid(1fr, 20px);
+  }
+}

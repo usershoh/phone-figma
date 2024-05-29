@@ -1,0 +1,45 @@
+.num > div {
+  @include grid(1fr 1fr 1fr, 30px);
+}
+
+.num {
+  background-color: $color-red;
+  padding: 70px 0;
+
+  &_item {
+    text-align: center;
+
+    h1 {
+      font-size: 80px;
+      color: $color-white;
+    }
+    p {
+      font-size: 16px;
+      color: $color-white;
+    }
+  }
+}
+@media (max-width: 850px) {
+  .num > div {
+    @include grid(1fr 1fr, 30px);
+  }
+  .num {
+    &_item {
+      h1 {
+        font-size: 60px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .num > div {
+    @include grid(1fr, 30px);
+  }
+  .num {
+    &_item {
+      h1 {
+        font-size: 80px;
+      }
+    }
+  }
+}

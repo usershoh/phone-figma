@@ -1,0 +1,65 @@
+.download {
+  padding: 30px 0;
+
+  h2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: $color-black;
+  }
+  h1 {
+    font-size: 32px;
+    color: $color-black;
+  }
+  p {
+    font-size: 16px;
+    color: $color-gray;
+  }
+  button {
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: $color-black;
+    @include flex(center, space-between, 0);
+    padding: 1px 15px 0 15px;
+    margin: 0 auto;
+
+    div {
+      @include grid(1fr, 0);
+      p {
+        font-size: 14px;
+        color: $color-white;
+      }
+      h1 {
+        font-size: 24px;
+        color: $color-white;
+        margin-top: -5px;
+      }
+    }
+  }
+  button:hover {
+    background-color: $color-red;
+  }
+}
+.download > div {
+  @include grid(1fr, 8px);
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .download {
+    br {
+      display: none;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .download {
+    h1 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}

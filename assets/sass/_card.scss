@@ -1,0 +1,61 @@
+.card_item {
+  @include grid(1fr 1fr, 80px);
+  align-items: center;
+  padding: 30px 0;
+
+  &_img {
+    width: 100%;
+  }
+  &_text {
+    @include grid(1fr, 5px);
+
+    h2 {
+      font-size: 14px;
+      font-weight: 400;
+      color: $color-black;
+    }
+    h1 {
+      font-size: 30px;
+      color: $color-black;
+    }
+    p {
+      font-size: 16px;
+      color: $color-gray;
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .card_item {
+    @include grid(1fr 0.8fr, 30px);
+
+    &_text {
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .card_item {
+    &_text {
+      h1 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media (max-width: 570px) {
+  .card_item {
+    @include grid(1fr, 30px);
+
+    &_text {
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+}

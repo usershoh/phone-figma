@@ -1,0 +1,61 @@
+.dark {
+  background-color: $color-black;
+  padding: 50px 0;
+}
+.dark > div {
+  width: 600px;
+}
+.dark {
+  text-align: center;
+
+  h2 {
+    font-size: 15px;
+    color: $color-white;
+  }
+  h1 {
+    font-size: 24px;
+    color: $color-white;
+    padding: 10px 0;
+  }
+  p {
+    font-size: 16px;
+    color: $color-white;
+  }
+  &_img {
+    width: 80%;
+    padding-top: 10px;
+  }
+  &_bottom {
+    @include grid(1fr 1fr, 20px);
+    padding-top: 30px;
+    margin-top: -5px;
+    border-top: 2px solid $color-white;
+
+    &_ {
+      text-align: center;
+
+      img {
+        padding-bottom: 5px;
+      }
+      p {
+        font-size: 15px;
+        color: $color-white;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .dark > div {
+    width: 80%;
+  }
+}
+@media (max-width: 360px) {
+  .dark {
+    h1 {
+      font-size: 18px;
+    }
+    p{
+        font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+.navbar_top {
+  background-color: $color-white;
+  @include flex(center, space-between, 0);
+  height: 90px;
+
+  &_img {
+    width: 120px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+.navbar_top_end {
+  @include grid(2fr 1fr, 30px);
+  align-items: center;
+
+  &_a {
+    @include flex(center, flex-start, 20px);
+
+    a {
+      font-size: 16px;
+      color: $color-gray;
+    }
+    a:hover {
+      color: $color-red;
+    }
+  }
+  button {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 17px;
+  }
+  button:hover {
+    background-color: $color-red;
+    border: none;
+  }
+}
+
+#check {
+  display: none;
+}
+.menu {
+  display: none;
+}
+.closed {
+  display: none;
+}
+
+//showcase
+
+.navbar_showcase {
+  @include grid(1fr 0.8fr, 70px);
+  align-items: flex-start;
+  padding-top: 30px;
+
+  &_img {
+    width: 100%;
+  }
+
+  &_text {
+    @include grid(1fr, 15px);
+    padding-top: 10%;
+
+    &_img {
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      font-size: 48px;
+      color: $color-black;
+    }
+    p {
+      font-size: 16px;
+      color: $color-black;
+    }
+    &_btn {
+      @include grid(170px 170px, 20px);
+
+      button {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: $color-black;
+        color: $color-white;
+        font-size: 18px;
+      }
+      button:hover {
+        background-color: $color-red;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar_top {
+    &_img {
+      width: 100px;
+    }
+  }
+  .navbar_top_end {
+    position: fixed;
+    top: 0;
+    right: -300%;
+    height: 100vh;
+    padding: 50px;
+    width: 280px;
+    background-color: $color-black;
+    @include grid(1fr, 30px);
+    transition: 0.5s;
+
+    &_a {
+      @include grid(1fr, 30px);
+
+      a {
+        color: $color-white;
+      }
+    }
+    button {
+      border: 2px solid $color-white;
+      width: 100%;
+    }
+  }
+  .menu {
+    display: block;
+    font-size: 20px;
+    color: $color-black;
+  }
+  .menu:hover {
+    color: $color-red;
+  }
+  #check:checked ~ .navbar_top_end {
+    right: 0;
+  }
+  .closed {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    color: $color-white;
+  }
+  .closed:hover {
+    color: $color-red;
+  }
+
+  // showcase
+
+  .navbar_showcase {
+    @include grid(1fr 0.7fr, 30px);
+
+    &_text {
+      padding-top: 0;
+
+      h1 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 14px;
+      }
+      &_btn {
+        @include grid(48% 48%, 4%);
+
+        button {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar_showcase {
+    @include grid(1fr 1fr, 20px);
+    align-items: center;
+
+    &_text {
+      @include grid(1fr, 5px);
+
+      h1 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 12px;
+      }
+      &_btn {
+        button {
+          font-size: 13px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar_showcase {
+    @include grid(1fr, 30px);
+    align-items: center;
+
+    &_text {
+      @include grid(1fr, 5px);
+
+      h1 {
+        font-size: 28px;
+      }
+      p {
+        font-size: 13px;
+      }
+      &_btn {
+        button {
+          font-size: 15px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
